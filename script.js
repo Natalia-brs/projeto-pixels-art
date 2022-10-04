@@ -1,5 +1,6 @@
 
-//----------------------------Primeiro Requisito------------------------//
+
+//----------------------------------Primeiro Requisito-----------------------------//
 function addTitle () {
  const getHeader = document.getElementById('header');
  const title = document.createElement('h1');
@@ -10,7 +11,7 @@ function addTitle () {
  
 }
 
-//----------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//
 
 
 //--------------------------Segundo e Terceiro Requisito---------------------------//
@@ -23,7 +24,7 @@ function addColorPalette () {
         paddles.className = 'color'
         paddles.style.border = '1px solid black'
     }
-    
+
 }
 
 
@@ -31,11 +32,39 @@ function paintPaddle () {
     const getPaddles = document.getElementsByClassName('color');
     const colors = ['black', 'chartreuse', 'fireBrick', 'dodgerBlue' ]
     for (let index = 0; index < getPaddles.length; index += 1) {
-        getPaddles[index].style.backgroundColor = colors[index];  
+        getPaddles[index].style.backgroundColor = colors[index]
+    
     }
 }
-//---------------------------------------------------------------------//
+//--------------------------------------------------------------------------------------//
+
+
+//------------------------------------Requisito Quatro----------------------------------//
+ function generateRandomColors () {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+    
+}
+
+
+function button () {
+    const getButton = document.getElementById('button-random-color');
+    getButton.innerText = 'Cores aleatórias'
+    const getPaddles2 = document.getElementsByClassName('color');
+    getButton.addEventListener('click', function(){
+        for (let index = 1; index < 4; index += 1) {
+            getPaddles2[index].style.backgroundColor = generateRandomColors()
+        }
+    })         
+}
+
+//----------------------------------------------------------------------------------------//
+
 
 addTitle();
 addColorPalette();
 paintPaddle();
+button();
+generateRandomColors();
