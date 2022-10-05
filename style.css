@@ -1,26 +1,42 @@
 * {
   margin: 0;
   padding: 0;
-
 }
+
+
+h1 {
+  color: rgb(210, 235, 187);
+}
+
+
+body {
+  background-image: url('./giphy.gif');
+  background-size: cover;
+}
+
 
 #header {
   margin-top: 45px;
 }
 
+
 #color-palette {
   display: flex;
   margin-left: 535px;
   margin-top: 40px;
+  
 }
+
 
 .color {
   padding: 15px;
   width: 20px;
   height: 20px;
   margin-left: 5px;
+  border-radius: 10px;
  
 }
+
 
 .pixel {
   border: 1px solid black;
@@ -37,17 +53,39 @@
   margin-right: 544px;
 }
 
+
 #clear-board {
-  display: flex;
-margin-top: 50px;
-margin-left: 630px;
+display: flex;
+margin-top: 20px;
+margin-left: 610px;
+color:indigo;
+font-size: 20px;
+padding: 5px;
+border-radius: 10px 20px;
+font-family: monospace;
 }
+
+
+#clear-board:hover{
+  background-color:lightskyblue;
+}
+
 
 #button-random-color {
   display: flex;
-  margin-top: -310px;
-  margin-left: 410px;
+  margin-top: -321px;
+  margin-left: 360px;
+  padding: 10px;
+  border-radius: 10px 20px;
+  color: olive;
+  font-family: monospace;
 }
+
+
+#button-random-color:hover{
+  background-color: lightcyan;
+}
+
 
 #pixel-board {
   border: 1px solid black;

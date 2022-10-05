@@ -1,19 +1,11 @@
 
-
-window.onload = function() {
-
-}
-
-
-
-
 //----------------------------------Requisito 1-----------------------------//
 function addTitle () {
  const getHeader = document.getElementById('header');
  const title = document.createElement('h1');
  title.innerHTML = 'Paleta de Cores';
- title.id = 'title'
- title.style.textAlign = 'center'
+ title.id = 'title';
+ title.style.textAlign = 'center';
  getHeader.appendChild(title);
  
 }
