@@ -1,6 +1,13 @@
 
 
-//----------------------------------Primeiro Requisito-----------------------------//
+window.onload = function() {
+
+}
+
+
+
+
+//----------------------------------Requisito 1-----------------------------//
 function addTitle () {
  const getHeader = document.getElementById('header');
  const title = document.createElement('h1');
@@ -14,7 +21,7 @@ function addTitle () {
 //---------------------------------------------------------------------------------//
 
 
-//--------------------------Segundo e Terceiro Requisito---------------------------//
+//--------------------------Requisito 2 e 3---------------------------//
 function addColorPalette () {
     const getSection = document.getElementById('color-palette');
      getSection.style.textAlign = 'center';
@@ -39,7 +46,10 @@ function paintPaddle () {
 //--------------------------------------------------------------------------------------//
 
 
-//------------------------------------Requisito Quatro----------------------------------//
+
+
+//------------------------------------Requisito 4---------------------------------------//
+
  function generateRandomColors () {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -48,7 +58,7 @@ function paintPaddle () {
     
 }
 
-
+// Ajuda da Renata
 function button () {
     const getButton = document.getElementById('button-random-color');
     getButton.innerText = 'Cores aleatórias'
@@ -60,9 +70,11 @@ function button () {
     })         
 }
  //------------------------------------------------------------------------------------------//  
+
+
  
  
-//---------------Requisito 6 e 7--------------------------------------------------------------//
+//--------------------------------Requisito 6 e 7----------------------------------------------//
  function boardPixel () {
    const getPixel = document.getElementById('pixel-board');
    for (let index = 0; index < 25; index += 1) {
@@ -75,7 +87,8 @@ function button () {
 
  //------------------------------------------------------------------------------------------------//
 
-//-----------------Requisito 8---------------------------------------------------------------------//
+//-----------------------------------Requisito 8---------------------------------------------------//
+
 //Adicionando a classe selected inicialmente a cor preta para indicar que ela e selecionada primeiro//
 //Utilizei o classList.add para adicionar ao primeiro elemento da classe color a nova classe selected//
  function firstColor () {
@@ -87,6 +100,7 @@ function button () {
  //-----------------------------------------------------------------------------------------------//
 
  //---------------------------------Requisitos 9 e 10 -----------------------------------------------//
+ // procurei no stackoverflow
 //função com event de click para que quando clicada a classe selected seja removida da cor anterior
 //e adicionada a nova cor 
 
@@ -98,8 +112,8 @@ function button () {
         e.target.classList.add('selected')
     })
  }
+
 //Quando clicado na paleta de cores a cor é selecionada e pinta o pixel da pixel board
-//utilizei o parametro da função como um target para alterar o backgroudColor da pixel board
  function paintBoard () {
     const getBoard = document.getElementById('pixel-board');
     getBoard.addEventListener('click', function(element){
@@ -120,7 +134,6 @@ for(let index = 0; index < getPixel.length; index += 1) {
     getPixel[index].style.backgroundColor = 'white'
 }
 }
-
 
 //---------------------------------------------------------------------------------------------------------//
 
