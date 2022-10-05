@@ -109,6 +109,21 @@ function button () {
  }
 //-------------------------------------------------------------------------------------------------------//
 
+//------------------------------Requisito 11-------------------------------------------------------------//
+
+const getBoardPixel = document.getElementById('clear-board')
+getBoardPixel.addEventListener('click',clearButton)
+
+function clearButton () {
+const getPixel = document.getElementsByClassName('pixel')
+for(let index = 0; index < getPixel.length; index += 1) {
+    getPixel[index].style.backgroundColor = 'white'
+}
+}
+
+
+//---------------------------------------------------------------------------------------------------------//
+
 addTitle();
 addColorPalette();
 paintPaddle();
@@ -117,4 +132,6 @@ generateRandomColors();
 boardPixel();
 firstColor();
 classSelected();
-paintBoard()
+paintBoard();
+clearButton()
+

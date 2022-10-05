@@ -1,24 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
 .color {
   padding: 15px;
   width: 20px;
   height: 20px;
   display: inline-block;
-  margin-right: 5px;
+ 
 }
 
 #pixel-board {
   border: 1px solid black;
+  border-spacing: 1px;
   height: 400px;
   width: 400px;
   display: inline-block;
-  position: absolute;
   margin-left: 420px;
-  margin-top: 30px;
+  margin-top: 80px; 
+  text-align: center;
+
 }
+
 .pixel {
   border: 1px solid black;
   padding: 15px;
   height: 40px;
   width: 40px;
   display: inline-block;
+
+}
+
+#clear-board {
+  display: flex;
+  margin-left: 620px;
+  margin-top: -450px;
 }
