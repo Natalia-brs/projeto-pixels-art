@@ -59,12 +59,25 @@ function button () {
         }
     })         
 }
+ //------------------------------------------------------------------------------------------//  
+ 
+ 
+//---------------Requisito 6 e 7--------------------------------------------------------------//
+ function boardPixel () {
+   const getPixel = document.getElementById('pixel-board');
+   for (let index = 0; index < 25; index += 1) {
+    const divPixels = document.createElement('div')
+    divPixels.className = 'pixel'
+    getPixel.appendChild(divPixels)
+    divPixels.style.backgroundColor = 'white'
+   }
+ }
 
-//----------------------------------------------------------------------------------------//
-
+ //------------------------------------------------------------------------------------------------//
 
 addTitle();
 addColorPalette();
 paintPaddle();
 button();
 generateRandomColors();
+boardPixel();
