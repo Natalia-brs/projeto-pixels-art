@@ -75,9 +75,19 @@ function button () {
 
  //------------------------------------------------------------------------------------------------//
 
+//-----------------Requisito 8---------------------------------------------------------------------//
+ function firstColor () {
+    const blackColor = document.getElementsByClassName('color')[0]
+     blackColor.classList.add('selected')    
+     console.log(blackColor)
+ }
+
+ //-----------------------------------------------------------------------------------------------//
+
 addTitle();
 addColorPalette();
 paintPaddle();
 button();
 generateRandomColors();
 boardPixel();
+firstColor();
