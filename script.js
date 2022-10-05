@@ -76,13 +76,38 @@ function button () {
  //------------------------------------------------------------------------------------------------//
 
 //-----------------Requisito 8---------------------------------------------------------------------//
+//Adicionando a classe selected inicialmente a cor preta para indicar que ela e selecionada primeiro//
+//Utilizei o classList.add para adicionar ao primeiro elemento da classe color a nova classe selected//
  function firstColor () {
     const blackColor = document.getElementsByClassName('color')[0]
      blackColor.classList.add('selected')    
-     console.log(blackColor)
+    
  }
 
  //-----------------------------------------------------------------------------------------------//
+
+ //---------------------------------Requisitos 9 e 10 -----------------------------------------------//
+//função com event de click para que quando clicada a classe selected seja removida da cor anterior
+//e adicionada a nova cor 
+
+ function classSelected () {
+    const board = document.getElementById('color-palette');
+    board.addEventListener('click', function(e){
+        const selected = document.querySelector('.selected')
+        selected.classList.remove('selected')
+        e.target.classList.add('selected')
+    })
+ }
+//Quando clicado na paleta de cores a cor é selecionada e pinta o pixel da pixel board
+//utilizei o parametro da função como um target para alterar o backgroudColor da pixel board
+ function paintBoard () {
+    const getBoard = document.getElementById('pixel-board');
+    getBoard.addEventListener('click', function(element){
+        element.target.style.backgroundColor = document.getElementsByClassName('selected')[0].style.backgroundColor
+        
+    })
+ }
+//-------------------------------------------------------------------------------------------------------//
 
 addTitle();
 addColorPalette();
@@ -91,3 +116,5 @@ button();
 generateRandomColors();
 boardPixel();
 firstColor();
+classSelected();
+paintBoard()
