@@ -55,8 +55,7 @@ function button () {
     const getButton = document.getElementById('button-random-color');
     getButton.innerText = 'Cores aleatórias'
     const getPaddles2 = document.getElementsByClassName('color');
-    getButton.addEventListener('click', function(){
-        
+    getButton.addEventListener('click', function(){ 
         for (let index = 1; index < 4; index += 1) {
             getPaddles2[index].style.backgroundColor = generateRandomColors()
         }
@@ -71,13 +70,23 @@ function button () {
 function arrayColor () {
     const getClassColor = document.getElementsByClassName('color')[0];
     const arrayPaddle = [];
-    const color = generateRandomColors();
-    for (let index = 0; index < 3; index += 1) {  
-         getClassColor.style.backgroundColor = color[1]
-         arrayPaddle.push(color)
+    const random = generateRandomColors();
+    for (let index = 1; index < 4; index += 1) {  
+         getClassColor.style.backgroundColor = random[1]
+         arrayPaddle.push(random)
+    }
+    localStorage.setItem('colorPalette', JSON.stringify(arrayPaddle));
+}
+
+function recoverColors () {
+    const getClassColorAgain = document.getElementsByClassName('color')[0]
+    const colorsSaved = JSON.parse(localStorage.getItem('colorPalette'))
+    for (let index = 1; index < 4; index += 1) {
+    
+
+      
     }
 
-    console.log(arrayPaddle)
 }
  
  
@@ -155,4 +164,5 @@ classSelected();
 paintBoard();
 clearButton();
 arrayColor();
+recoverColors();
 
