@@ -64,6 +64,17 @@ function button () {
  //------------------------------------------------------------------------------------------//  
 
 
+ //------------------------------Requisito 5--------------------------------------------------//
+
+function storageFunction () {
+  let getPaddleColors = document.getElementsByClassName('colors')
+  let arrayColors = [''];
+  for (let index = 0; index < 4; index +=1) {
+       
+  }
+  
+
+}
  
  
 //--------------------------------Requisito 6 e 7----------------------------------------------//
@@ -105,7 +116,7 @@ function button () {
     })
  }
 
-//Quando clicado na paleta de cores a cor é selecionada e pinta o pixel da pixel board
+//Quando clicado na paleta de cores a classe selected é selecionada e pinta o pixel da pixel board
  function paintBoard () {
     const getBoard = document.getElementById('pixel-board');
     getBoard.addEventListener('click', function(element){
@@ -139,4 +150,5 @@ firstColor();
 classSelected();
 paintBoard();
 clearButton()
+storageFunction()
 
