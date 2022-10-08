@@ -56,9 +56,11 @@ function button () {
     getButton.innerText = 'Cores aleatórias'
     const getPaddles2 = document.getElementsByClassName('color');
     getButton.addEventListener('click', function(){
+        
         for (let index = 1; index < 4; index += 1) {
             getPaddles2[index].style.backgroundColor = generateRandomColors()
         }
+        arrayColor();
     })         
 }
  //------------------------------------------------------------------------------------------//  
@@ -66,14 +68,16 @@ function button () {
 
  //------------------------------Requisito 5--------------------------------------------------//
 
-function storageFunction () {
-  let getPaddleColors = document.getElementsByClassName('colors')
-  let arrayColors = [''];
-  for (let index = 0; index < 4; index +=1) {
-       
-  }
-  
+function arrayColor () {
+    const getClassColor = document.getElementsByClassName('color')[0];
+    const arrayPaddle = [];
+    const color = generateRandomColors();
+    for (let index = 0; index < 3; index += 1) {  
+         getClassColor.style.backgroundColor = color[1]
+         arrayPaddle.push(color)
+    }
 
+    console.log(arrayPaddle)
 }
  
  
@@ -149,6 +153,6 @@ boardPixel();
 firstColor();
 classSelected();
 paintBoard();
-clearButton()
-storageFunction()
+clearButton();
+arrayColor();
 
