@@ -21,10 +21,13 @@ function addColorPalette () {
         const paddles = document.createElement('div');
         getSection.appendChild(paddles);
         paddles.className = 'color'
+       
         paddles.style.border = '1px solid black'
     }
 
 }
+
+
 
 
 function paintPaddle () {
@@ -48,6 +51,7 @@ function paintPaddle () {
     const b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})`;
     
+    
 }
 
 // Ajuda da Renata
@@ -55,7 +59,8 @@ function button () {
     const getButton = document.getElementById('button-random-color');
     getButton.innerText = 'Cores aleatórias'
     const getPaddles2 = document.getElementsByClassName('color');
-    getButton.addEventListener('click', function(){ 
+    getButton.addEventListener('click', function(event){ 
+        event.preventDefault();
         for (let index = 1; index < 4; index += 1) {
             getPaddles2[index].style.backgroundColor = generateRandomColors()
         }
@@ -68,23 +73,28 @@ function button () {
  //------------------------------Requisito 5--------------------------------------------------//
 
 function arrayColor () {
-    const getClassColor = document.getElementsByClassName('color')[0];
     const arrayPaddle = [];
-    const random = generateRandomColors();
-    for (let index = 1; index < 4; index += 1) {  
-         getClassColor.style.backgroundColor = random[1]
-         arrayPaddle.push(random)
+    for (let index = 0; index < 3; index += 1) {  
+        const getClassColor = document.getElementById(`color-${index}`);
+        const random = generateRandomColors();
+        //  getClassColor.style.backgroundColor = random
+        arrayPaddle[index] = random
     }
     localStorage.setItem('colorPalette', JSON.stringify(arrayPaddle));
 }
 
 function recoverColors () {
-    const getClassColorAgain = document.getElementsByClassName('color')[0]
-    const colorsSaved = JSON.parse(localStorage.getItem('colorPalette'))
-    for (let index = 1; index < 4; index += 1) {
-    
-
-      
+    const colorsSaved = JSON.parse(localStorage.getItem('colorPalette'));
+    console.log(colorsSaved)
+    if (colorsSaved !== null) {
+        for (let index = 0; index < 3; index += 1) {
+            const getClassColorAgain = document.getElementById(`color-${index}`)
+            // getClassColorAgain.style = `backgroundColor : ${colorsSaved[index]}`
+           
+        }
+    }
+    else {
+        generateRandomColors();
     }
 
 }
@@ -105,8 +115,8 @@ function recoverColors () {
 
 //-----------------------------------Requisito 8---------------------------------------------------//
 
-//Adicionando a classe selected inicialmente a cor preta para indicar que ela e selecionada primeiro//
-//Utilizei o classList.add para adicionar ao primeiro elemento da classe color a nova classe selected//
+// Adicionando a classe selected inicialmente a cor preta para indicar que ela e selecionada primeiro//
+// Utilizei o classList.add para adicionar ao primeiro elemento da classe color a nova classe selected//
  function firstColor () {
     const blackColor = document.getElementsByClassName('color')[0]
      blackColor.classList.add('selected')    
