@@ -1,5 +1,5 @@
 
-//----------------------------------Requisito 1-----------------------------//
+//--------------------------------------Requisito 1---------------------------------//
 function addTitle () {
  const getHeader = document.getElementById('header');
  const title = document.createElement('h1');
@@ -13,29 +13,37 @@ function addTitle () {
 //---------------------------------------------------------------------------------//
 
 
-//--------------------------Requisito 2 e 3---------------------------//
+//-------------------------------Requisito 2 e 3----------------------------------//
 function addColorPalette () {
     const getSection = document.getElementById('color-palette');
      getSection.style.textAlign = 'center';
     for (let index = 0; index < 4; index += 1) {
         const paddles = document.createElement('div');
         getSection.appendChild(paddles);
-        paddles.className = 'color'
-       
-        paddles.style.border = '1px solid black'
+        paddles.className = 'color';
+        paddles.style.border = '1px solid black';
     }
 
+    
 }
 
 
+function generateRandomColors () {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`; 
+}
 
 
 function paintPaddle () {
     const getPaddles = document.getElementsByClassName('color');
-    const colors = ['black', 'chartreuse', 'fireBrick', 'dodgerBlue' ]
-    for (let index = 0; index < getPaddles.length; index += 1) {
-        getPaddles[index].style.backgroundColor = colors[index]
-    
+     getPaddles[0].style.backgroundColor = 'black'
+    for (let index = 1; index < getPaddles.length; index += 1) {
+        getPaddles[index].style.backgroundColor = generateRandomColors()
+        if (getPaddles[index].style.backgroundColor === 'rgb(255, 255, 255') {
+            getPaddles[index].style.backgroundColor = generateRandomColors()
+        }
     }
 }
 //--------------------------------------------------------------------------------------//
@@ -45,62 +53,48 @@ function paintPaddle () {
 
 //------------------------------------Requisito 4---------------------------------------//
 
- function generateRandomColors () {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return `rgb(${r}, ${g}, ${b})`;
-    
-    
-}
-
-// Ajuda da Renata
+// Ajuda da Renata e do walber
 function button () {
     const getButton = document.getElementById('button-random-color');
     getButton.innerText = 'Cores aleatórias'
-    const getPaddles2 = document.getElementsByClassName('color');
-    getButton.addEventListener('click', function(event){ 
-        event.preventDefault();
+    getButton.addEventListener('click', function(){ 
+        const arrayPaddle = ['black'];
+        const getPaddles2 = document.getElementsByClassName('color');
+        paintPaddle()  
         for (let index = 1; index < 4; index += 1) {
-            getPaddles2[index].style.backgroundColor = generateRandomColors()
+           const recebe = getPaddles2[index].style.backgroundColor 
+            arrayPaddle.push(recebe);
         }
-        arrayColor();
+        localStorage.setItem('colorPalette', JSON.stringify(arrayPaddle));
     })         
 }
- //------------------------------------------------------------------------------------------//  
+ //-------------------------------------------------------------------------------------------//  
 
 
  //------------------------------Requisito 5--------------------------------------------------//
-
-function arrayColor () {
-    const arrayPaddle = [];
-    for (let index = 0; index < 3; index += 1) {  
-        const getClassColor = document.getElementById(`color-${index}`);
-        const random = generateRandomColors();
-        //  getClassColor.style.backgroundColor = random
-        arrayPaddle[index] = random
-    }
-    localStorage.setItem('colorPalette', JSON.stringify(arrayPaddle));
-}
-
+//ajuda do walber
 function recoverColors () {
-    const colorsSaved = JSON.parse(localStorage.getItem('colorPalette'));
-    console.log(colorsSaved)
-    if (colorsSaved !== null) {
-        for (let index = 0; index < 3; index += 1) {
-            const getClassColorAgain = document.getElementById(`color-${index}`)
-            // getClassColorAgain.style = `backgroundColor : ${colorsSaved[index]}`
-           
-        }
+    const getClassColor = document.getElementsByClassName('color'); 
+    const arrayPaddle = ['black'];
+    for (let index = 1; index < 4; index += 1) {  
+       const getBackground = getClassColor[index].style.backgroundColor;
+       arrayPaddle.push(getBackground);
+    }
+
+    if (localStorage.length === 0) {
+        localStorage.setItem('colorPalette', JSON.stringify(arrayPaddle));
     }
     else {
-        generateRandomColors();
+        const colorsSaved = JSON.parse(localStorage.getItem('colorPalette'));
+        for (let index2 = 1; index2 < 4; index2 += 1) {
+            getClassColor[index2].style.backgroundColor = colorsSaved[index2];
+        }
     }
 
 }
+//-----------------------------------------------------------------------------------------------// 
  
- 
-//--------------------------------Requisito 6 e 7----------------------------------------------//
+//----------------------------------Requisito 6 e 7----------------------------------------------//
  function boardPixel () {
    const getPixel = document.getElementById('pixel-board');
    for (let index = 0; index < 25; index += 1) {
@@ -123,7 +117,7 @@ function recoverColors () {
     
  }
 
- //-----------------------------------------------------------------------------------------------//
+ //--------------------------------------------------------------------------------------------------//
 
  //---------------------------------Requisitos 9 e 10 -----------------------------------------------//
  // procurei no stackoverflow
@@ -163,16 +157,17 @@ for(let index = 0; index < getPixel.length; index += 1) {
 
 //---------------------------------------------------------------------------------------------------------//
 
-addTitle();
-addColorPalette();
-paintPaddle();
-button();
-generateRandomColors();
-boardPixel();
-firstColor();
-classSelected();
-paintBoard();
-clearButton();
-arrayColor();
-recoverColors();
+window.onload = function() {
+    addTitle();
+    addColorPalette();
+    paintPaddle();
+    button();
+    boardPixel();
+    firstColor();
+    classSelected();
+    paintBoard();
+    clearButton();
+    recoverColors();
+}
+
 
