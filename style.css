@@ -1,63 +1,83 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
-
-h1 {
-  color: rgb(210, 235, 187);
-}
-
 
 body {
   background-image: url('./giphy.gif');
   background-size: cover;
+ 
 }
 
+h1 {
+  color: rgb(210, 235, 187);
+  display: flex;
+  justify-content: center;
+}
 
 #header {
   margin-top: 45px;
 }
 
-
-#color-palette {
+.container-itens {
   display: flex;
-  margin-left: 535px;
-  margin-top: 40px; 
-
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
 }
 
+ .itens {
+  border: 1px solid red;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 223px;
+ }
+
+ #color-palette {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
+  flex-wrap: wrap;
+  margin-top: 40px;  
+  border: 1px solid red;
+}
 
 .color {
-  padding: 15px;
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
+  width: 50px;
+  height: 50px;
   border-radius: 10px;
+}
 
+#pixel-board {
+  border: 1px solid black;
+  width: 91%;
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  margin-top: 30px;
 }
 
 
 .pixel {
   border: 1px solid black;
   height: 40px;
-  width: 40px;
 }
 
+.container-buttons {
+  display: flex;
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, 40px);
-  margin-left: 550px;
-  margin-top: 60px;
-  margin-right: 544px;
 }
 
+#button-random-color {
+  padding: 10px;
+  border-radius: 10px 20px;
+  color: olive;
+  font-family: monospace;
+  border: 1px solid red;
+}
 
 #clear-board {
-display: flex;
-margin-top: 20px;
-margin-left: 610px;
 color: indigo;
 font-size: 20px;
 padding: 5px;
@@ -70,23 +90,8 @@ font-family: monospace;
   background-color: lightskyblue;
 }
 
-
-#button-random-color {
-  display: flex;
-  margin-top: -321px;
-  margin-left: 360px;
-  padding: 10px;
-  border-radius: 10px 20px;
-  color: olive;
-  font-family: monospace;
-}
-
-
 #button-random-color:hover {
   background-color: lightcyan;
 }
 
 
-#pixel-board {
-  border: 1px solid black;
-}
