@@ -18,4 +18,4 @@ Neste projeto, você vai implementar um editor de arte com pixels em que a pesso
 
 # Github Pages do Projeto:
 
-- [x] [Pixels Art] (https://natalia-brs.github.io/projeto-pixels-art/)
+[Pixels Art] (https://natalia-brs.github.io/projeto-pixels-art/)
