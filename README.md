@@ -7,7 +7,7 @@ Neste projeto, você vai implementar um editor de arte com pixels em que a pesso
 <ol>
 <li>Adicione à página o título "Paleta de Cores</li>
 <li>Adicione à página uma paleta contendo quatro cores distintas</li>
-<li>Adicione a cor **preta** como a primeira cor da paleta de cores</li>
+<li>Adicione a cor preta como a primeira cor da paleta de cores</li>
 <li>Implemente uma função usando localStorage para que a paleta de cores gerada aleatoriamente seja mantida após recarregar a página</li>
 <li>Adicione à página um quadro contendo 25 pixels</li>
 <li>Faça com que cada pixel do quadro tenha largura e altura de 40 pixels e borda preta de 1 pixel de espessura</li>
