@@ -1,6 +1,6 @@
 # Boas-vindas ao repositório do projeto Arte com Pixels realizado na Trybe durante o modulo de Fundamentos!
 
-Neste projeto, você vai implementar um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e poderá pintar o que quiser em um quadro branco 🎨 🧑‍🎨
+Neste projeto, foi um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e poderá pintar o que quiser em um quadro branco 🎨 🧑‍🎨
 
 # Requisitos Obrigatórios:
 
@@ -21,3 +21,8 @@ Neste projeto, você vai implementar um editor de arte com pixels em que a pesso
 # Github Pages do Projeto:
 
  - [x] <a href="https://natalia-brs.github.io/projeto-pixels-art/" target="_blank">Pixels Art</a> 
+ 
+# Skills praticadas:
+- Manipulação do DOM
+- CSS
+- HTML
