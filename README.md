@@ -22,7 +22,7 @@ Neste projeto, foi um editor de arte com pixels em que a pessoa usuária poderá
 
  - [x] <a href="https://natalia-brs.github.io/projeto-pixels-art/" target="_blank">Pixels Art</a> 
  
-# Skills praticadas:
+# Tecnologias utilizadas:
 - Manipulação do DOM
 - CSS
 - HTML
