@@ -1,6 +1,6 @@
 # Boas-vindas ao repositório do projeto Arte com Pixels realizado na Trybe durante o modulo de Fundamentos!
 
-Neste projeto, foi um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e poderá pintar o que quiser em um quadro branco 🎨 🧑‍🎨
+Neste projeto, foi criado um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e poderá pintar o que quiser em um quadro branco 🎨 🧑‍🎨
 
 # Requisitos Obrigatórios:
 
